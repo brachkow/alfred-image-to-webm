@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>brachkow.image-to-webm</string>
+	<key>category</key>
+	<string>Universal Actions</string>
+	<key>connections</key>
+	<dict>
+		<key>2548D3EC-FB7C-4095-B5BE-C1974A09FE0A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>473A3340-D7BF-43E7-8ED0-0428806E5E20</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Timur Brachkow</string>
+	<key>description</key>
+	<string>Convert image to WebM</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Image to WebM</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<integer>1</integer>
+				<key>filetypes</key>
+				<array>
+					<string>com.compuserve.gif</string>
+					<string>org.webmproject.webp</string>
+					<string>public.heic</string>
+					<string>public.jpeg</string>
+					<string>public.png</string>
+					<string>public.tiff</string>
+				</array>
+				<key>name</key>
+				<string>Image to WebM</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>2548D3EC-FB7C-4095-B5BE-C1974A09FE0A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>export PATH=/opt/homebrew/bin
+
+query=$1
+
+echo "$query"
+
+for FILE in "$@"; do
+	convert "$FILE" "${FILE%%.*}.webm"
+done</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>473A3340-D7BF-43E7-8ED0-0428806E5E20</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2548D3EC-FB7C-4095-B5BE-C1974A09FE0A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>95</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>473A3340-D7BF-43E7-8ED0-0428806E5E20</key>
+		<dict>
+			<key>xpos</key>
+			<integer>305</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/brachkow/alfred-image-to-webm</string>
+</dict>
+</plist>
